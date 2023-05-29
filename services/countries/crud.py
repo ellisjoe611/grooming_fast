@@ -1,6 +1,8 @@
 from sqlalchemy.orm import Session
 
-from . import model, schema
+from .model import CountryTable
+from .schema import Country
 
-def get_countries(db_session: Session) -> list[schema.Country]:
-    return db_session.query(model.Country).all()
+
+def get_countries(db_session: Session) -> list[Country]:
+    return db_session.query(CountryTable).all()

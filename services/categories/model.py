@@ -1,22 +1,24 @@
-from sqlalchemy import Column, ForeignKey, Integer, String
+from sqlalchemy import Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 
 from initializations.db import Base
 
 
-class CategoryMst(Base):
+class CategoryMstTable(Base):
     __tablename__ = "cat_mst"
+
     cat_mst_cd = Column(String(length=100), primary_key=True, index=True)
     cat_mst_nm = Column(String(length=100), nullable=False, index=True)
 
-    detail = relationship(
-        "CategoryDtl",
+    details = relationship(
+        "CategoryDtlTable",
         back_populates="master"
     )
 
 
-class CategoryDtl(Base):
+class CategoryDtlTable(Base):
     __tablename__ = "cat_dtl"
+
     cat_mst_cd = Column(
         String(length=100),
         ForeignKey("cat_mst.cat_mst_cd"),
@@ -27,8 +29,8 @@ class CategoryDtl(Base):
     cat_dtl_nm = Column(String(length=100), nullable=False, index=True)
 
     master = relationship(
-        "CategoryMst",
-        back_populates="detail",
+        "CategoryMstTable",
+        back_populates="details",
         foreign_keys=[cat_mst_cd],
         uselist=False
     )
