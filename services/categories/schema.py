@@ -12,11 +12,13 @@ class CategoryDtlBase(BaseModel):
     cat_dtl_nm: str
 
 
-class CategoryDtl(CategoryDtlBase):
+class CategoryMst(CategoryMstBase):
     class Config:
         orm_mode = True
 
 
-class CategoryMst(CategoryMstBase):
+class CategoryDtl(CategoryDtlBase):
+    master: CategoryMst
+
     class Config:
         orm_mode = True
