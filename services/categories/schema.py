@@ -18,7 +18,5 @@ class CategoryDtl(CategoryDtlBase):
 
 
 class CategoryMst(CategoryMstBase):
-    cat_dtl_list: list[CategoryDtl] = []
-
     class Config:
         orm_mode = True

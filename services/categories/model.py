@@ -9,7 +9,7 @@ class CategoryMst(Base):
     cat_mst_cd = Column(String(length=100), primary_key=True, index=True)
     cat_mst_nm = Column(String(length=100), nullable=False, index=True)
 
-    cat_dtl_list = relationship("CategoryDtl", back_populates="master")
+    detail = relationship("CategoryDtl", back_populates="master")
 
 
 class CategoryDtl(Base):
@@ -19,4 +19,4 @@ class CategoryDtl(Base):
     cat_dtl_cd = Column(String(length=100), primary_key=True, index=True)
     cat_dtl_nm = Column(String(length=100), nullable=False, index=True)
 
-    master = relationship("CategoryMst", back_populates="cat_dtl_list")
+    master = relationship("CategoryMst", back_populates="detail")
