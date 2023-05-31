@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from .model import CountryTable
-from .schema import Country
+from models.model_country import CountryTable
+from schemas.schema_country import Country
 
 
 def get_countries(db_session: Session) -> list[Country]:

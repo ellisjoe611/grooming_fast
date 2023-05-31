@@ -1,6 +1,6 @@
 from sqlalchemy import Column, String
 
-from initializations.db import Base
+from core.db import Base
 
 
 class CountryTable(Base):

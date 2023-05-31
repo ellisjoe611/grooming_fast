@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 
-from .model import CategoryMstTable, CategoryDtlTable
-from .schema import CategoryMst as CategoryMstSchema, CategoryDtl as CategoryDtlSchema
+from models.model_category import CategoryMstTable, CategoryDtlTable
+from schemas.schema_category import CategoryMst as CategoryMstSchema, CategoryDtl as CategoryDtlSchema
 
 
 def get_category_mst(db_session: Session) -> list[CategoryMstSchema]:

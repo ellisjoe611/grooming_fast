@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from services.countries.controller import router as router_countries
-from services.categories.controller import router as router_categories
+from api.v1.countries import router as router_countries
+from api.v1.categories import router as router_categories
 
 def get_app() -> FastAPI:
     app: FastAPI = FastAPI()

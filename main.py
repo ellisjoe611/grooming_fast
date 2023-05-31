@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from initializations.app import get_app
-from initializations.db import SQLALCHEMY_DATABASE_URL
+from core.app import get_app
+from core.db import SQLALCHEMY_DATABASE_URL
 
 app: FastAPI = get_app()
 

@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 
-from initializations.db import get_db_session
-from .schema import CategoryMst, CategoryDtl
-from .crud import get_category_mst, get_category_dtl
+from core.db import get_db_session
+from schemas.schema_category import CategoryMst, CategoryDtl
+from crud.crud_category import get_category_mst, get_category_dtl
 
 router: APIRouter = APIRouter()
 

@@ -1,7 +1,7 @@
 from sqlalchemy import Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 
-from initializations.db import Base
+from core.db import Base
 
 
 class CategoryMstTable(Base):
